@@ -7,6 +7,9 @@
 <body>
 
 <?php
+
+// Exercices sur les chaînes de caractère
+
      $prenom = "Solane";
      $nom = "Genevaux";
      $ville = "Tournefeuille";
@@ -31,6 +34,13 @@ $personne2["nom"] = "Harley";
 $personne2["ville"] = "LOFAF";
 $personne2["age"] = 15;
 
+$personne3 = array(
+  "prenom" => "Dave",
+  "nom" => "Strider",
+  "ville" => "LOHAC",
+  "age" => 14
+);
+
 //var_dump($personne2);
 
 if ($personne["age"] == 1) {
@@ -42,6 +52,24 @@ else {
      {$personne2["ville"]} et j'ai {$personne2["age"]} ans.</div>";
 }
 
+// Exercices sur les boucles
+
+$week = ["Lundi", "Mardi", "Mercredi", "Jeudimac", "Vendredi", "Samedi", "Dimanche"];
+
+foreach ($week as $key => $value) {
+  echo "$value <br>";
+}
+
+$personnes = [$personne1, $personne2, $personne3];
+
+if (empty($personnes)) {
+  echo "Il n'y a personne :'(";
+}
+else {
+  foreach ($personnes as $key => $value) {
+    echo "{$value["prenom"]} {$value["nom"]}, vit sur {$value["ville"]}, {$value["age"]} ans.<br>";
+  }
+}
 
 ?>
 
