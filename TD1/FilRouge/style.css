@@ -2,13 +2,34 @@
 
 body {
   font-family : 'Mukta Mahee', sans-serif;
+  background-color: #EDEBD7;
 }
 
 h1 {
   font-size: 2em;
-  color: red;
+  color: #b30000;
+  text-align: center;
+  margin : 50px;
 }
 
 .red {
-  color: red;
+  border: 2px solid red !important;
+}
+
+#list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: space-between;
+}
+
+.item {
+  flex-direction: column;
+  border: 2px solid black;
+  border-radius: 2px;
+  flex-basis: 20%;
+  list-style-type: none;
+  list-style-position: inside;
+  margin-bottom: 20px;
+  padding: 10px;
 }
