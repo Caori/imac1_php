@@ -15,7 +15,7 @@ include 'data_movies.php';
 echo "<h1>Liste de films trop swag</h1>
 <ul id='list'>"; //ouvre la liste principale
 
-foreach ($movies as $value) { //parcourt la liste de films
+foreach($movies as $value) { //parcourt la liste de films
   if($value["genre"] == "Science Fiction") { //si le film a pour genre "Science Fiction"
   $films = <<<HTML
   <div class='item red'>

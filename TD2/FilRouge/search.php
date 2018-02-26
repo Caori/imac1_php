@@ -19,7 +19,6 @@ include 'data.movies.php';
   sort($genres);
   $texte = null;
   foreach($genres as $genre) {
-    echo "coucou";
     $texte = $texte ."<option value='{$genre}'>{$genre}</option>";
   }
   echo $texte;

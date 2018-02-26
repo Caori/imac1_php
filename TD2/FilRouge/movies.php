@@ -16,10 +16,10 @@ $date = $_GET["date"];
 $genre = $_GET["genre"];
 $cast = $_GET["cast"];
 $films = searchMovies($titre, $date, $genre, $cast);
- var_dump($films);
+var_dump($films);
 
  if($films == null) {
-   echo "Rien du tout !";
+   echo "Rien du tout !</br>";
  }
  else echo $films;
 ?>
