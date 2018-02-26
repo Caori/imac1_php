@@ -56,7 +56,7 @@ else {
 
 $week = ["Lundi", "Mardi", "Mercredi", "Jeudimac", "Vendredi", "Samedi", "Dimanche"];
 
-foreach ($week as $key => $value) {
+foreach ($week as $value) {
   echo "$value <br>";
 }
 

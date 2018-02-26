@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+
+body{
+	font-family: 'Oswald', sans-serif;
+	background: #001c34;
+	color: #ffffff;
+}
+
+h1{
+	text-align: center;
+	font-size: 3em;
+}
+
+.movie-list{
+	position: relative;
+	display: grid;
+	padding: 0 15%;
+	grid-template-columns: 50% 50%;
+	grid-gap: 20px;
+	grid-auto-flow: row;
+}
+
+.movie-item{
+	position: relative;
+}
+
+.movie-item h3{
+	margin: 0;
+}
+
+.movie-item ul{
+	list-style-type: none;
+}
+
+.movie-year{
+	font-size: 0.75em;
+}
+
+.emoji{
+	font-size: 2em;
+}
+
+.highlighted-year{
+	color: red;
+}
+
+.highlighted-genre{
+	color: green;
+}
+
+.highlighted-year::after, .highlighted-genre::after{
+	content: '👈';
+	font-size: 22px;
+}
+
+.error-message{
+	font-size: 1.5em;
+	text-align: center;
+}
