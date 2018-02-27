@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css?family=Mukta+Mahee');
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web');
+
+body {
+  font-family : 'Mukta Mahee', sans-serif;
+  background-color: #e6ffe6;
+}
+
+h1 {
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 2em;
+  color: #003300;
+  text-align: center;
+  margin : 50px;
+}
+
+form {
+  align-items: center;
+}
+
+.item {
+  flex-direction: column;
+  border: 2px solid black;
+  border-radius: 2px;
+  flex-basis: 20%;
+  list-style-type: none;
+  list-style-position: inside;
+  margin-bottom: 20px;
+  padding: 10px;
+}
