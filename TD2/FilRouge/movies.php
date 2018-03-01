@@ -43,7 +43,7 @@ HTML;
 
 ?>
 </div>
-
+<!--Lien pour revenir au formulaire de recherche!-->
 <a href="./search.php">&larr; Retour au formulaire</a>
 
 </body>
