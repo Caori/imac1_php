@@ -21,7 +21,7 @@ class Personne {
 
     //setter générique
     public function set($nomAttribut, $valeur) {
-      $this->$nomAttribut = $nomAttribut;
+      $this->$nomAttribut = $valeur;
     }
 
     //affiche les attributs d'une Personne

@@ -1,0 +1,84 @@
+SELECT * FROM Cast;
+
+
+SELECT *
+FROM Cast
+WHERE deathYear IS NULL;
+
+
+SELECT *
+FROM Cast
+WHERE deathYear IS NULL AND 2018-birthYear > 65;
+
+
+SELECT *
+FROM Cast
+WHERE deathYear IS NULL
+ORDER BY birthYear
+LIMIT 1;
+
+
+SELECT *
+FROM Cast
+WHERE 2018-birthYear BETWEEN 30 AND 50
+ORDER BY birthYear;
+
+
+SELECT *
+FROM Movie
+WHERE title LIKE "%the %";
+
+
+#Jointures
+
+SELECT title, releaseDate
+FROM Movie
+WHERE idCountry LIKE "USA"
+ORDER BY releaseDate DESC;
+
+
+SELECT Movie.title AS title,
+       Movie.releaseDate AS releaseDate,
+       Country.name AS country
+FROM Movie
+INNER JOIN Country
+  ON Movie.idCountry = Country.code
+WHERE releaseDate > DATE("2008-03-01")
+ORDER BY releaseDate;
+
+
+SELECT m.title AS title,
+  	   GROUP_CONCAT(g.name) AS genres
+FROM Movie m, Genre g, MovieGenre mg
+WHERE m.id = mg.idMovie AND g.id = mg.idGenre
+  AND m.releaseDate < DATE("1998-03-01")
+  AND (m.idCountry LIKE "USA" || m.idCountry LIKE "IT")
+GROUP BY title;
+
+
+SELECT DISTINCT c.lastname AS lastName,
+                c.firstname AS firstName
+FROM Actor a, Cast c
+WHERE a.idActor = c.id
+ORDER BY lastName, firstName;
+
+
+SELECT m.title AS title,
+       g.name AS genre,
+       a.name AS role_Élodie
+FROM Movie m, MovieGenre mg, Genre g, Actor a, Cast c
+WHERE m.id = mg.idMovie AND g.id = mg.idGenre
+  AND a.idMovie = m.id AND a.idActor = c.id
+  AND c.firstname LIKE "Élodie"
+  AND m.idCountry LIKE "FR";
+
+
+SELECT c.lastname AS lastname,
+       c.firstname AS firstname,
+       a.name AS role,
+       m.title AS title
+FROM Movie m, Actor a, Cast c, Director d
+WHERE d.idDirector = (SELECT c.id WHERE c.firstname LIKE "Myriam")
+AND d.idMovie = m.id
+  AND a.idMovie = m.id AND a.idActor = c.id
+ORDER BY role;
