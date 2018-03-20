@@ -72,7 +72,7 @@ WHERE m.id = mg.idMovie AND g.id = mg.idGenre
   AND c.firstname LIKE "Élodie"
   AND m.idCountry LIKE "FR";
 
-
+//pas finie
 SELECT c.lastname AS lastname,
        c.firstname AS firstname,
        a.name AS role,
@@ -82,3 +82,30 @@ WHERE d.idDirector = (SELECT c.id WHERE c.firstname LIKE "Myriam")
 AND d.idMovie = m.id
   AND a.idMovie = m.id AND a.idActor = c.id
 ORDER BY role;
+
+#Requêtes complexes
+
+SELECT g.name, COUNT(g.id) AS nb_films
+FROM MovieGenre mg, Genre g
+WHERE mg.idGenre = g.id
+GROUP BY g.id
+ORDER BY g.name;
+
+
+SELECT COUNT(m.id)
+FROM Movie m, Actor a
+WHERE a.name LIKE 'Voix Off'
+AND a.idMovie = m.id;
+
+
+SELECT c.firstname, c.lastname
+FROM Cast c, Actor a
+WHERE (a.name LIKE 'Développeur' OR a.name LIKE 'Développeuse')
+AND a.idActor = c.id;
+
+
+SELECT m.title, COUNT(d.idDirector) as nb_reals
+  FROM Director d, Movie m
+  WHERE m.id = d.idMovie
+  GROUP BY m.title
+  HAVING nb_reals > 1;
