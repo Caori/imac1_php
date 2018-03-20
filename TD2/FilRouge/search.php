@@ -17,8 +17,7 @@
 
 include 'data.movies.php';
 
-  sort($genres); //ordonne les élements de $genres dans l'ardre alphabétique
-  $texte = null;
+  $genres = Genre::getAll()
   foreach($genres as $genre) {
     $texte = $texte ."<input type='radio' name='genre' value='{$genre}'>{$genre}</br>"; //radio : n'accepte qu'une seule case cochée
   }

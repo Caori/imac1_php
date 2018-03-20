@@ -1,5 +1,6 @@
 <?php
-require_once '../pdo/MyPDO.imac_movies.include.php';
+//ne fonctionne qu'avec le chemin absolu, je sais pas pourquoi
+require_once "/var/www/html/imac1_php/TD4/pdo/MyPDO.imac_movies.include.php";
 
 /**
  * Classe Genre
@@ -61,17 +62,18 @@ class Genre {
 	 * Tri par ordre alphabétique
 	 * @return array<Genre> liste d'instances de Genre
 	 */
-	/*public static function getAll() {
+	public static function getAll() {
 		$all = MyPDO::getInstance()->prepare(
-			"SELECT * , /*(SELECT COUNT(*)
-FROM MovieGenre mg, Genre g, Movie m
-WHERE mg.idGenre = g.id) //essai de requêtre
-			FROM Genre
-			ORDER BY releaseDate DESC, title;");
+		"SELECT g.name, COUNT(g.id) AS nb_films
+		FROM MovieGenre mg, Genre g
+		WHERE mg.idGenre = g.id
+	  GROUP BY g.id
+	  HAVING nb_films > 0
+		ORDER BY g.name;");
 		$all->execute();
 		$all->setFetchMode(PDO::FETCH_OBJ);
 		$results = $all->fetchAll();
 
 		return $results;
-	}*/
+	}
 }
