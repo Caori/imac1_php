@@ -31,7 +31,7 @@ echo $texte;
 
 ?>
 
-  <input placeholder="Cast" name="cast" type="text">
+  <!--<input placeholder="Cast" name="cast" type="text"> !-->
     <input value="Rechercher" type="submit">
   </form>
 

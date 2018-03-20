@@ -152,8 +152,8 @@ class Movie {
 	}
 }
 
-function searchMovies($titre, $datemin, $datemax, $genre, $cast) {
-  $cmd = "SELECT * FROM Movie m, Genre g, MovieGenre mg, Cast c, Actor a, Director d ";
+function searchMovies($titre, $datemin, $datemax, $genre) {
+  $cmd = "SELECT * FROM Movie m, Genre g, MovieGenre mg ";
   if($titre != null) {
     $cmd .= "WHERE m.title LIKE '%$titre%' ";
   }
@@ -171,7 +171,7 @@ function searchMovies($titre, $datemin, $datemax, $genre, $cast) {
   }
   if($genre != null) {
     if($titre == null && $datemin == null && $datemax == null) {
-      $$cmd .= "WHERE mg.idMovie = m.id AND mg.idGenre = g.id
+      $cmd .= "WHERE mg.idMovie = m.id AND mg.idGenre = g.id
       AND g.name LIKE '$genre' ";
     }
     else $cmd .= "AND mg.idMovie = m.id AND mg.idGenre = g.id
