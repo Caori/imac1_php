@@ -10,7 +10,8 @@
 error_reporting(E_ALL);
 ini_set("display_errors", 1);
 
-require_once "/var/www/html/imac1_php/TD4/pdo/MyPDO.imac_movies.include.php";
+include(dirname(__DIR__).'/TD4/pdo/MyPDO.imac_movies.include.php');
+//require_once "/var/www/html/imac1_php/TD4/pdo/MyPDO.imac_movies.include.php";
 require_once "./search.php";
 require_once "./movie/Movie.class.php";
 
@@ -48,8 +49,6 @@ HTML;
 
 </div>
 
-<!--Lien pour revenir au formulaire de recherche!-->
-<a href="./search.php">&larr; Retour au formulaire</a>
 
 </body>
 </html>

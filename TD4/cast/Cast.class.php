@@ -1,5 +1,5 @@
 <?php
-require_once '../pdo/MyPDO.imac_movies.include.php';
+include(dirname(__DIR__).'/pdo/MyPDO.imac_movies.include.php');
 
 error_reporting(E_ALL);
 ini_set("display_errors", 1);

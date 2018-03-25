@@ -1,6 +1,6 @@
 <?php
 //ne fonctionne qu'avec le chemin absolu, je sais pas pourquoi
-require_once "/var/www/html/imac1_php/TD4/pdo/MyPDO.imac_movies.include.php";
+include(dirname(__DIR__).'/pdo/MyPDO.imac_movies.include.php');
 
 /**
  * Classe Genre

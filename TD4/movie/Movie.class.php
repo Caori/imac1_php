@@ -1,5 +1,5 @@
 <?php
-require_once "/var/www/html/imac1_php/TD4/pdo/MyPDO.imac_movies.include.php";
+include(dirname(__DIR__).'/pdo/MyPDO.imac_movies.include.php');
 
 /**
  * Classe Movie
